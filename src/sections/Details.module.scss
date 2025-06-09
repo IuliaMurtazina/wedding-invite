@@ -1,0 +1,104 @@
+.section {
+  padding-top: dpx(70);
+  gap: dpx(100)
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: dpx(150);
+}
+
+.map-container {
+  width: 100%;
+   touch-action: none; /* Отключает захват жестов браузером */
+}
+
+.timing,
+.location {
+  @include flex-vert-center;
+  gap: dpx(60);
+  text-align: center;
+}
+
+.program {
+  @include flex-vert-center;
+  gap: dpx(10)
+}
+
+.bg {
+  @include wrapper-bg;
+  padding: dpx(20) dpx(30);
+}
+
+.time {
+  @include flex-center-all;
+  gap: dpx(10);
+
+  span {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.location {
+  justify-content: space-between;
+
+  p {
+    max-width: 22vw;
+    line-height: 150%;
+  }
+}
+
+.map {
+  width: 100vw;
+  height: dpx(500);
+  pointer-events: auto; /* Разрешает взаимодействие с картой */
+}
+
+
+@media screen and (max-width: $tablet) {
+
+  .section {
+    padding-top: mpx(20);
+    gap: mpx(50)
+  }
+
+
+  .container {
+    width: 90vw;
+    flex-direction: column;
+    gap: mpx(60);
+  }
+
+
+  .timing,
+  .location {
+    gap: mpx(40);
+  }
+
+  .program {
+
+
+    span {
+      font-size: 1.1em;
+    }
+  }
+
+  .bg {
+    padding: mpx(15) mpx(20);
+  }
+
+  .location {
+
+    p {
+      max-width: 90vw;
+    }
+  }
+
+  .map {
+    height: mpx(400);
+  }
+
+}

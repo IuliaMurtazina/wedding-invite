@@ -1,0 +1,75 @@
+$desktop-width: 1536; // Ширина макета для десктопа
+$mobile-width: 375; // Ширина макета для мобильных устройств
+
+// Функция для перевода пикселей в vw для десктопа
+@function dpx($px) {
+  @return calc($px / $desktop-width) * 100vw;
+}
+
+// Функция для перевода пикселей в vw для мобильных устройств
+@function mpx($px) {
+  @return calc($px / $mobile-width) * 100vw;
+}
+
+
+// COLORS
+$color-main-grey: rgb(84, 84, 84);
+$background-main: #fcf8f9;
+$color-primary: #f2cab0;
+$color-primary-bg: #f2cab015;
+
+$box-shadow-grey-circle-desk: 0 dpx(1) dpx(15) dpx(2) $color-main-grey;
+$box-shadow-grey-circle-mob: 0 mpx(1) mpx(15) mpx(2) $color-main-grey;
+$box-shadow-grey-block-desk: 0 dpx(1) dpx(15) rgba($color-main-grey, .5);
+$box-shadow-grey-block-mob: 0 mpx(1) mpx(15) rgba($color-main-grey, .5);
+
+
+// MIXINS 
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-vert {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-vert-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-vert-center-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin colored-text-desk {
+  color: $color-primary;
+  text-shadow: 0 dpx(1) dpx(2) #000;
+}
+
+@mixin colored-text-mob {
+  text-shadow: 0 mpx(1) mpx(2) #000;
+}
+
+@mixin wrapper-bg {
+  background-color: $color-primary-bg;
+  border: dpx(1) solid $color-primary;
+  box-shadow: $box-shadow-grey-block-desk;
+}
+
+// BREAKPOINTS
+
+$tablet: 768px;

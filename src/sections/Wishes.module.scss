@@ -1,0 +1,36 @@
+.section {
+  padding: dpx(100) 0;
+  gap: dpx(80)
+}
+
+.container {
+  @include flex-vert-center-all;
+  max-width: 45vw;
+  gap: dpx(50);
+
+  div {
+    @include flex-vert-center;
+    gap: dpx(10);
+
+    span {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    gap: mpx(60);
+    padding: mpx(60) 0;
+  }
+
+  .container {
+    gap: mpx(45);
+    max-width: 90vw;
+
+    div {
+      gap: mpx(10);
+    }
+  }
+}

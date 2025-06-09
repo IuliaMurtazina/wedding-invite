@@ -1,0 +1,46 @@
+.section {
+  gap: dpx(20);
+  position: relative;
+  height: 100%;
+  padding: dpx(120) 0;
+  
+  
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../../public/img/final-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: cover;
+    opacity: .7;
+    z-index: 0;
+    background-attachment: fixed;
+  }
+
+  &>* {
+    z-index: 1;
+  }
+
+  h2 {
+    &::after {
+      content: none;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    gap: mpx(20);
+    padding: mpx(90) 0;
+
+    &::after {
+      width: 150%;
+      background-position: 45% 25%;
+      background-attachment: unset;
+    }
+  }
+}

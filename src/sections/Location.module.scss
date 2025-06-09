@@ -1,0 +1,25 @@
+.section {
+  gap: dpx(50);
+  padding-top: dpx(70);
+
+  p {
+    max-width: 30vw;
+    line-height: 150%;
+  }
+}
+
+.map {
+  width: 100vw;
+  height: dpx(500);
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    gap: mpx(30);
+    padding-top: mpx(50);
+  }
+
+  p {
+    max-width: 90vw;
+  }
+}

@@ -1,0 +1,43 @@
+.section {
+  gap: dpx(60);
+  padding: dpx(60) 0 dpx(120);
+}
+
+.container {
+  @include flex-vert-center;
+  // gap: dpx(50);
+  padding: dpx(20) dpx(30);
+  background-color: rgba($color: #fff, $alpha: .7);
+  box-shadow: $box-shadow-grey-block-desk;
+  border-radius: dpx(20)
+}
+
+
+.time {
+  @include flex-center-all;
+  gap: dpx(10);
+
+  span { 
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .section {
+    gap: mpx(50);
+    padding: mpx(50) 0 mpx(90);
+  }
+
+  .container {
+    // gap: mpx(30);
+
+    p {
+      max-width: 90vw;
+    }
+  }
+}

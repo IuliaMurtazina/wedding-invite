@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@font-face {
+  font-family: 'Wonder Garden';
+  src: local('Wonder Garden Script'), local('Wonder-Garden-Script'),
+    url('../../public/fonts/WonderGardenScript-Regular.woff2') format('woff2'),
+    url('../../public/fonts/WonderGardenScript-Regular.woff') format('woff'),
+    url('../../public/fonts/WonderGardenScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SMHeadersFont";
+  src: url(../../public/fonts/New-YorkerC.eot);
+  src: url(../../public/fonts/New-YorkerC.eot?#iefix)format("embedded-opentype"), url(../../public/fonts/New-YorkerC.woff)format("woff"), url(../../public/fonts/New-YorkerC.ttf)format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: $background-main;
+}
+
+body>* {
+  font-family: "Prata", serif;
+  font-size: dpx(18);
+  font-weight: 400;
+  color: $color-main-grey;
+
+
+  @media screen and (max-width: $tablet) {
+    font-size: mpx(16);
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+  @include flex-vert-center-all;
+  text-align: center;
+}
+
+.section-title {
+  font-family: "SMHeadersFont", sans-serif;
+  font-size: dpx(45);
+  @include colored-text-desk;
+  font-weight: 400;
+  padding-bottom: dpx(20);
+  position: relative;
+
+  &::after {
+    content: '';
+    width: dpx(200);
+    height: dpx(1);
+    background-color: $color-primary;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    box-shadow: 0 dpx(1) dpx(2) $color-main-grey;
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: mpx(35);
+    @include colored-text-mob;
+
+    padding-bottom: mpx(15);
+
+    &::after {
+      content: '';
+      width: mpx(150);
+      height: mpx(1);
+      box-shadow: 0 mpx(1) mpx(2) $color-main-grey;
+    }
+  }
+}
+
+.swiper-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: dpx(15);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: dpx(40) !important;
+  color: $color-primary;
+  text-shadow: 0 dpx(2) dpx(4) $color-main-grey;
+}
+
+@media screen and (max-width: $tablet) {
+  .swiper-slide {
+    gap: mpx(11);
+
+    p {
+      font-size: mpx(14);
+    }
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: mpx(30) !important;
+    color: $color-primary;
+    text-shadow: 0 mpx(2) mpx(3) $color-main-grey;
+  }
+}
+
+[data-aos^=slide][data-aos^=slide] {
+  transition-property: transform, opacity !important;
+  opacity: 0 !important;
+}
+
+[data-aos=slide-right] {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+
+[data-aos=slide-left] {
+  transform: translate3d(100%, 0, 0) !important;
+}
+
+[data-aos^=slide][data-aos^=slide].aos-animate {
+  transform: translateZ(0) !important;
+  opacity: 1 !important;
+}

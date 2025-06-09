@@ -1,0 +1,165 @@
+.main {
+  height: 100svh;
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    object-fit: contain;
+    height: 100svh;
+  }
+
+  &__image {
+    height: 100%;
+    opacity: .8;
+    width: 30vw;
+    object-fit: contain;
+  }
+
+  &__container {
+    @include flex-vert-center;
+    position: relative;
+    z-index: 1;
+    gap: dpx(10);
+
+    p {
+      text-transform: uppercase;
+      letter-spacing: dpx(5);
+    }
+  }
+}
+
+.title-container {
+  position: relative;
+}
+
+.title {
+  font-family: 'Wonder Garden', sans-serif;
+  font-size: dpx(170);
+  @include flex-vert-center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  margin-top: dpx(-15);
+
+  span {
+    line-height: 50%;
+    color: #000;
+
+    &:nth-child(2) {
+      margin-top: dpx(-25);
+      margin-bottom: dpx(5);
+    }
+  }
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: dpx(20);
+
+  div {
+    @include flex-vert-center;
+
+    &>span {
+      text-transform: uppercase;
+
+      &.date-main {
+        font-size: dpx(35);
+        @include colored-text-desk;
+      }
+    }
+  }
+
+  &>span {
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    padding: dpx(10) dpx(25);
+
+    &::before,
+    &::after {
+      width: 100%;
+      height: dpx(1);
+      content: '';
+      position: absolute;
+      background-color: #000;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .main {
+
+    &__bg {
+      width: 100vw;
+    }
+
+    &__image {
+      width: 88vw;
+    }
+
+    &__container {
+      gap: mpx(10);
+
+      p {
+        top: -14%;
+        letter-spacing: mpx(4);
+      }
+    }
+  }
+
+  .title {
+    font-size: mpx(120);
+    margin-top: 0;
+
+    span {
+      &:nth-child(2) {
+        margin-top: mpx(-15);
+        margin-bottom: mpx(5);
+      }
+    }
+  }
+
+  .date {
+    bottom: -25%;
+    gap: mpx(15);
+
+    div {
+      &>span {
+        font-size: mpx(15);
+
+        &.date-main {
+          font-size: mpx(30);
+          @include colored-text-mob;
+        }
+      }
+    }
+
+    &>span {
+      font-size: mpx(15);
+      padding: mpx(10) mpx(20);
+
+      &::before,
+      &::after {
+        height: mpx(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.section {
+  gap: dpx(50);
+  position: relative;
+  height: 100%;
+  padding: dpx(120) 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../../public/img/timer-bg.png);
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    background-size: cover;
+    opacity: .7;
+    z-index: 0;
+  }
+
+  &>* {
+    z-index: 1;
+  }
+}
+
+.timer {
+  @include flex-center;
+  gap: dpx(25)
+}
+
+.item {
+  @include flex-vert-center;
+  gap: dpx(10);
+
+  div {
+    @include flex-center;
+    gap: dpx(10);
+
+    span {
+      padding: dpx(20) 0 dpx(15);
+      width: dpx(60);
+      position: relative;
+      font-size: dpx(35);
+      font-weight: bold;
+      display: block;
+
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $background-main;
+        z-index: -1;
+        border: dpx(1) solid rgba($color-main-grey, .4);
+        box-shadow: $box-shadow-grey-block-desk;
+      }
+    }
+  }
+
+  &>span {}
+}
+
+
+@media screen and (max-width: $tablet) {
+  .section {
+    gap: mpx(50);
+    padding: mpx(100) 0;
+
+    &::after {
+      background-position: 30% center;
+    }
+  }
+
+  .timer {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: mpx(20);
+    row-gap: mpx(25);
+    padding: 0 mpx(20);
+  }
+
+  .item {
+    gap: mpx(10);
+
+    div {
+      gap: mpx(8);
+
+      span {
+        padding: mpx(15) 0 mpx(12);
+        width: mpx(50);
+        font-size: mpx(30);
+
+        &::before {
+          border: mpx(1) solid rgba($color-main-grey, .4);
+          box-shadow: $box-shadow-grey-block-mob;
+        }
+      }
+    }
+
+    &>span {}
+  }
+
+}
