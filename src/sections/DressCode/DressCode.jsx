@@ -13,7 +13,8 @@ const DressCode = () => {
           <h2 className={`section-title`}>Дресс-код</h2>
           <div className={`${classes.container} ${classes.hero}`}>
             <img
-              src={`${baseUrl}img/color-1.jpg`} data-aos="zoom-in"
+              src={`${baseUrl}img/color-1.jpg`}
+              data-aos="zoom-in"
               className={classes.color}
             />
             <div className={classes["container-text"]}>
@@ -33,7 +34,8 @@ const DressCode = () => {
               </p>
             </div>
             <img
-              src={`${baseUrl}img/color-2.jpg`} data-aos="zoom-in"
+              src={`${baseUrl}img/color-2.jpg`}
+              data-aos="zoom-in"
               className={classes.color}
             />
           </div>
@@ -56,14 +58,17 @@ const DressCode = () => {
             </p>
           </div>
           <div className={`${classes.container} ${classes.pics}`}>
-            <div className={classes.woman} data-aos="fade-in">
+            <div
+              className={classes.woman}
+              data-aos="fade-in"
+            >
               <Slider
                 data={[
-                  { img: "woman-1", text: "Total Black" },
                   {
                     img: "woman-2",
                     text: "Цвета можно комбинировать как угодно",
                   },
+                  { img: "woman-1", text: "Total Black" },
                   {
                     img: "woman-3",
                     text: "Не слишком нарядное белое платье :)",
@@ -71,14 +76,17 @@ const DressCode = () => {
                 ]}
               />
             </div>
-            <div className={classes.man} data-aos="fade-in">
+            <div
+              className={classes.man}
+              data-aos="fade-in"
+            >
               <Slider
                 data={[
-                  { img: "man-1", text: "Total Black" },
                   {
                     img: "man-2",
                     text: "Цвета можно комбинировать как угодно",
                   },
+                  { img: "man-1", text: "Total Black" },
                   { img: "man-3", text: "Лёгкий casual" },
                 ]}
               />
